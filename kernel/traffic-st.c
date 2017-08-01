@@ -387,6 +387,7 @@ static long traffic_st_ioctl(struct file *file, unsigned int cmd, unsigned long 
            break;
         case TRAFFIC_ST_CONFIG_LOCK_CLEAN:
             atomic_cmpxchg(&config_lock, 1, 0);
+            break;
         default:
             pr_err("traffic_st_ioctl cmd %d invalid.\n", kmesg.cmd);
             return -1;
